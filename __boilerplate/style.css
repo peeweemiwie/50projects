@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500&family=PT+Mono&family=Quicksand:wght@300;400&family=Roboto+Mono:wght@100;200;300;400;500&family=Roboto:wght@100;300;400;500;900&display=swap');
+
+* {
+	box-sizing: border-box;
+}
+body {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	font-family: 'Roboto', sans-serif;
+	justify-content: center;
+	height: 100vh;
+	margin: 0;
+	overflow: hidden;
+}
