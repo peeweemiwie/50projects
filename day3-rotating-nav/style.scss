@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500&family=PT+Mono&family=Quicksand:wght@300;400&family=Roboto+Mono:wght@100;200;300;400;500&family=Roboto:wght@100;300;400;500;900&display=swap');
+
+:root {
+	--lightgray: #ddd;
+}
+* {
+	box-sizing: border-box;
+}
+body {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	font-family: 'Roboto', sans-serif;
+	justify-content: center;
+	height: 100vh;
+	margin: 0;
+	overflow: hidden;
+	background-color: #333;
+}
+
+h1 {
+	text-align: center;
+	transform: rotate(5deg);
+}
+.wrapper__buttons {
+	position: fixed;
+	z-index: 3;
+	background-color: tomato;
+	height: 200px;
+	width: 200px;
+	border-radius: 50%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	padding: 1rem;
+	top: -100px;
+	left: -100px;
+	transform: rotate(-45deg);
+	transition: all 500ms ease-in-out;
+	.btn {
+		border: 0;
+		background-color: transparent;
+		font-size: 2rem;
+		color: white;
+		cursor: pointer;
+	}
+}
+.main {
+	align-items: center;
+	background-color: #7ad9ea;
+	color: white;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	height: 100vh;
+	width: 100vw;
+	transform-origin: top left;
+	transition: transform 800ms ease-in;
+	box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+}
+
+.figure {
+	background-color: white;
+	padding: 1rem;
+	box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.25);
+	transform: rotate(-4deg);
+	.img {
+		object-fit: contain;
+		max-width: 100%;
+	}
+}
+
+.nav {
+	position: fixed;
+	bottom: 0;
+	left: -40px;
+	transform-origin: top right;
+	transition: transform 500ms ease-in 500ms;
+	ul {
+		list-style: none;
+		display: flex;
+		flex-direction: column;
+		height: 250px;
+		justify-content: space-between;
+		li {
+			color: white;
+			font-size: 2em;
+			text-align: right;
+		}
+	}
+}
+
+.container[data-show-nav='true'] {
+	nav {
+		transform: rotate(-15deg);
+	}
+	.main {
+		transform: rotate(-15deg);
+	}
+	.wrapper__buttons {
+		transform: rotate(135deg);
+		box-shadow: -10px -10px 10px rgba(0, 0, 0, 0.25%);
+	}
+}
+.container[data-show-nav='false'] {
+	nav {
+		transform: rotate(0);
+	}
+	.main {
+		transform: rotate(0);
+	}
+	.wrapper__buttons {
+		box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.25%);
+	}
+}

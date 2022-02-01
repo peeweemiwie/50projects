@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Template tag</title>
+</head>
+
+<body>
+  <h1>Template tag!!!</h1>
+  <div id="users-info"></div>
+  <template id="template">
+    <div>
+      <h2 class="header">header</h2>
+      <p class="text">text</p>
+      <hr>
+    </div>
+  </template>
+  <script>
+    const users = [
+      { name: 'Love', age: 7 },
+      { name: 'Jassi', age: 40 },
+    ]
+    const template = document.querySelector('#template').content;
+    const usersInfo = document.querySelector('#users-info');
+    users.forEach(user => {
+      const clone = document.importNode(template, true);
+      clone.querySelector('.header').textContent = user.name;
+      clone.querySelector('.text').textContent = user.age;
+      usersInfo.append(clone);
+    })
+
+
+  </script>
+</body>
+
+</html>
