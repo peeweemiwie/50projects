@@ -7,18 +7,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://kit.fontawesome.com/69427b4b41.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="style.css">
-  <title>Rotating navigation</title>
+  <link rel="stylesheet" href="searchbox.css">
+  <title>Animation!</title>
 </head>
 
 <body>
+
   <div class="container" id='container' data-show-nav='false'>
     <nav class='nav'>
       <ul>
         <li>
-          Home
+          Rotate
         </li>
         <li>
-          About
+          Swipe
         </li>
         <li>
           Contact
@@ -26,11 +28,39 @@
       </ul>
     </nav>
     <div class="wrapper__buttons">
-      <button class="btn btn-close" id='btn-close' title="close menu"><i class="fas fa-times"></i>
-        <button class="btn btn-open" id='btn-open' title="open menu"><i class="fas fa-bars"></i></button>
+      <button class="btn btn-close" id='btn-close' title="close menu"><i class="fas fa-times" aria-hidden="true"></i>
+        <button class="btn btn-open" id='btn-open' title="open menu"><i class="fas fa-bars"
+            aria-hidden="true"></i></button>
       </button>
     </div>
     <main class="main">
+      <section class="search">
+        <form id='search-form' class='search-form' data-open='false'>
+          <div class="wrapper__input">
+            <input type="search" name="" id="search-input" class="search-input">
+            <button id='search-button' class='search-button'><i class="fas fa-search" aria-hidden="true"></i><span
+                class="visible-hidden">search</span></button>
+          </div>
+          <small class="message" id="message"></small>
+        </form>
+
+        <div id="wrapper__results" class="wrapper__results" data-injected='false'>
+          <div>
+            <h3>Search results:</h3>
+            <div id="container__search-result"></div>
+          </div>
+
+          <button class="btn btn-search-close" id='btn-close' title="close menu"><i class="fas fa-times"
+              aria-hidden="true"></i></button>
+        </div>
+
+        <template id='template'>
+          <div class="search-result">
+            <h4 class="searched-text">test</h4>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat, et?</p>
+          </div>
+        </template>
+      </section>
       <h1>Rotating Navigation!</h1>
       <figure class='figure'>
         <img class='img'

@@ -22,6 +22,28 @@ h1 {
 	text-align: center;
 	transform: rotate(5deg);
 }
+
+button {
+	cursor: pointer;
+}
+
+// accessibility - visually hidden but screen reader will read
+.visible-hidden {
+	clip: rect(1px, 1px, 1px, 1px);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+	&:focus {
+		clip: auto;
+		height: auto;
+		overflow: auto;
+		position: absolute;
+		width: auto;
+	}
+}
+
 .wrapper__buttons {
 	position: fixed;
 	z-index: 3;
@@ -45,13 +67,9 @@ h1 {
 		cursor: pointer;
 	}
 }
+
 .main {
-	align-items: center;
 	background-color: #7ad9ea;
-	color: white;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
 	height: 100vh;
 	width: 100vw;
 	transform-origin: top left;
@@ -64,8 +82,10 @@ h1 {
 	padding: 1rem;
 	box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.25);
 	transform: rotate(-4deg);
+	max-width: 800px;
 	.img {
 		object-fit: contain;
+		max-height: 100%;
 		max-width: 100%;
 	}
 }
